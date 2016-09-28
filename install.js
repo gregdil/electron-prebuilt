@@ -23,9 +23,9 @@ function onerror (err) {
 }
 
 var paths = {
-  darwin: 'dist/Brave.app/Contents/MacOS/Brave',
-  linux: 'dist/brave',
-  win32: 'dist/brave.exe'
+  darwin: 'dist/Gikix.app/Contents/MacOS/Gikix',
+  linux: 'dist/gikix',
+  win32: 'dist/gikix.exe'
 }
 
 if (!paths[platform]) throw new Error('Unknown platform: ' + platform)
@@ -35,7 +35,7 @@ if (installedVersion === version && fs.existsSync(path.join(__dirname, paths[pla
 }
 
 // downloads if not cached
-download({version: version, arch: process.env.npm_config_arch, mirror: 'https://github.com/brave/electron/releases/download/v'}, extractFile)
+download({version: version, arch: process.env.npm_config_arch, mirror: 'https://github.com/gregdil/electron/releases/download/v'}, extractFile)
 
 // unzips and makes path.txt point at the correct executable
 function extractFile (err, zipPath) {
